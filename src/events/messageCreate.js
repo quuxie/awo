@@ -28,7 +28,46 @@ export default {
       if (message.author.bot || !message.guild) return;
 
       logger.debug(`Message received from ${message.author.tag}: ${message.content}`);
+// AWO replies
+if (message.mentions.has(client.user)) {
+  return message.reply(`unsa man yawa ${message.author}`);
+}
 
+if (message.content.toLowerCase().includes('awo')) {
+  const replies = [
+    `@${message.author.username} awo imong nawng`,
+    `@${message.author.username} chairman sa awo association`,
+    `@${message.author.username} top 1 awo spammer`,
+    `@${message.author.username} mura kag sirang plaka`,
+    `@${message.author.username} gi mingaw ka nako?`,
+    `@${message.author.username} murag ikaw na gyud ang awo`,
+    `@${message.author.username} wa kay laing maingon?`,
+    `@${message.author.username} niabot napud ang awo inspector`,
+    `@${message.author.username} sige rag awo wala nay lain`,
+    `@${message.author.username} gi summon ko nimo bai?`,
+    `@${message.author.username} certified awo addict`,
+    `@${message.author.username} murag naa kay awo deficiency`,
+    `@${message.author.username} imong pamilya kabalo ani?`,
+    `@${message.author.username} gi interview naka sa awo department?`,
+    `@${message.author.username} ayaw sige ug awo kay ma ban ka sa kalibutan`,
+    `@${message.author.username} level 99 awo warrior`,
+    `@${message.author.username} ikaw na president sa awo federation`,
+    `@${message.author.username} wa kay assignment?`,
+    `@${message.author.username} gi unsa man ka sa awo`,
+    `@${message.author.username} basin ikaw gyud si awo`,
+    `@${message.author.username} awa gi atake napud kag awo`,
+    `@${message.author.username} murag ikaw ang founder sa awo`,
+    `@${message.author.username} kalma lang bai di ta magdali`,
+    `@${message.author.username} akong lawyer wala ni approve ani`,
+    `@${message.author.username} suspicious kaayo ka`,
+    `@${message.author.username} sige rag yawit ug awo`,
+    `@${message.author.username} naka premium ka sa awo?`,
+    `@${message.author.username} gi pangita ka sa awo headquarters`
+  ];
+
+  const reply = replies[Math.floor(Math.random() * replies.length)];
+  return message.reply(reply);
+}
       const countingProcessed = await handleCountingGame(message, client);
       if (countingProcessed) {
         return;
